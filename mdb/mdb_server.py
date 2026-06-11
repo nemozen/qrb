@@ -9,7 +9,7 @@ import urllib.request
 
 import get_data
 import mdb
-
+import wue
 
 PORT = 8000
 server_args = None
@@ -60,6 +60,15 @@ class MDBServer(http.server.SimpleHTTPRequestHandler):
                 self.send_header('Content-type', 'application/json')
                 self.end_headers()
                 self.wfile.write(response.read())
+
+        # query monitoring system and generate an image showing water use effectiveness
+        elif self.path.startswith('/wue'):
+            img_bytes = wue.plot(wue.get_data(server_args.mon_url))
+            self.send_response(200)
+            self.send_header('Content-type', 'image/png')
+            self.send_header('Content-length', len(img_bytes))
+            self.end_headers()
+            self.wfile.write(img_bytes)
 
         # Otherwise, serve files normally (index.html, etc.)
         else:

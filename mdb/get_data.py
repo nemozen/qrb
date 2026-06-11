@@ -34,10 +34,10 @@ def sync_sheets(json_key, spreadsheet_url, tab_names, cache=False):
             yield output_file 
             continue # Move to the next worksheet
         
-        print(f"Downloading {name} ...")
         if not sh:
             print(f"Opening {spreadsheet_url} ...")
             sh = gc.open_by_url(spreadsheet_url)
+        print(f"Downloading {name} ...")
         worksheet = sh.worksheet(name)
         records = worksheet.get_all_records()
         df = pd.DataFrame(records)

@@ -17,8 +17,10 @@
         <div id="tab-visual" class="tab active" onclick="showPage('visual-page')">⌗ View</div>
         <div id="tab-search" class="tab" onclick="showPage('search-page')">🔎 Search</div>
         <div id="tab-video" class="tab" onclick="showPage('video-search-page')"> 📹 Video</div>
-	<button id="monSyncBtn" onclick="syncRealTimeData()" class="sync-button">
-	  📡 Monitor
+        <div id="tab-wue" class="tab" onclick="showPage('wue-page')">💧 WUE</div>
+
+        <button id="monSyncBtn" onclick="syncRealTimeData()" class="sync-button">
+          📡 Monitor
         </button>
         <button id="syncBtn" onclick="syncDatabase()" class="sync-button">
           🔄 Sync DB
@@ -59,7 +61,7 @@
             <table id="searchTable">
                 <thead>
                   <tr>
-		        <th>Container</th>
+                        <th>Container</th>
                         <th>Side</th>
                         <th>Shelf</th>
                         <th>Pos</th>
@@ -72,7 +74,8 @@
             </table>
         </div>
     </div>
-    <div id="video-search-page" class=page>
+
+    <div id="video-search-page" class="page">
       <div class="controls">
          <div class="control-group" style="flex: 1">
             <label>Search Files</label>
@@ -81,5 +84,13 @@
          </div>
       </div>
     </div>
+
+    <div id="wue-page" class="page">
+        <div style="text-align: center; padding: 20px;">
+            <!-- The browser will fetch the image directly from your Python server -->
+            <img id="wue-img" src="/wue" alt="Water Use Effectiveness Plot" style="max-width: 100%; height: auto; background: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        </div>
+    </div>
+
 </body>
 </html>
