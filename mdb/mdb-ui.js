@@ -223,9 +223,9 @@ async function syncRealTimeData() {
 
 function updateMachineUI(element, data) {
   // Change Color based on "code"
-  const temperature_alerts = [352, 350, 600, 351];
+  const temperature_alerts = [233, 275, 350, 351, 352, 370, 600];
   const power_input_alerts = [250, 251, 271, 246, 247, 248, 249, 206, 207, 217, 213, 203, 204, 205];
-  const power_output_alerts = [272, 276, 277,278, 279, 280];
+  const power_output_alerts = [236, 272, 276, 277,278, 279, 280];
   let bgColor = "#4b5563"; // Default Gray
   if (data.code === 7 || data.code == 9) bgColor = "#059669"; // Green
   else if (data.code === 11) bgColor = "#a5a424"; // Lime-Olive
@@ -240,7 +240,9 @@ function updateMachineUI(element, data) {
   const tooltipContent = `IP: ${data.host.ip}\n`+
 	`Code: ${data.code}\n` +
 	`Msg: ${data.message}\n` +
-	`${new Date(data['@timestamp']).toLocaleString()}`;
+	(data.datetime ? `Orig: ${new Date(data.datetime).toLocaleString()}\n` : '') +
+	`Last: ${new Date(data['@timestamp']).toLocaleString()}`;
+
   element.setAttribute('title', tooltipContent);
 }
 
