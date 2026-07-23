@@ -6,6 +6,8 @@ Technical documents from QRB Labs and [GAMA](http://gama.africa)
 
 <div style="padding: 16px"> 
  <ul>
+  <li><a href="QRB_water-control-tech-report.pdf">Automated control of evaporative cooling in
+modular data centers</a>, QRB Labs, July 2026</li>
  <li><a href="QRB_Labs_statement_EEP_pricing_202510.pdf">QRB Labs statement on EEP pricing</a>, October 2025</li>
    <li><a href="Electricity Pricing Strategy for Ethiopia.pdf">Electricity Pricing Strategy for Ethiopia</a>, strategy whitepaper for power providers</li>
   <li><a href="QRB @ ABC Mining in Ethiopia.pdf">Bitcoin &amp; Ethiopia’s journey to electrification</a>, presentation at <a href="https://afrobitcoin.org/">Africa Bitcoin Conference 2024</a></li>
